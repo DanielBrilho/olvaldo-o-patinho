@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"Stitle",
   "bboxMode":0,
-  "bbox_bottom":74,
+  "bbox_bottom":86,
   "bbox_left":10,
   "bbox_right":89,
   "bbox_top":21,

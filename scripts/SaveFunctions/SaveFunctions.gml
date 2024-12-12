@@ -1,7 +1,7 @@
 function save_room() 
 { 
 	
-	
+	var _itemNum = instance_number(Object_ingame);
     var _coinNum = instance_number(Ocoin); 
 	
     var _roomStruct =  
@@ -10,6 +10,8 @@ function save_room()
 		
         coinNum : _coinNum, 
         coindata : array_create(_coinNum), 
+		itemNum : _itemNum,
+		itemdata : array_create(_itemNum),
     };
 
 	
@@ -25,6 +27,16 @@ function save_room()
             y : _inst.y, 
         }; 
     }
+
+	for(var i = 0;i < _itemNum; i++)
+	{
+		var _inst = instance_find(Object_ingame, i);
+		_roomStruct.itemdata[i] =
+		{
+		    x : _inst.x, 
+            y : _inst.y, 
+		};
+	}
 
     // Guardar os dados da fase específica em um struct global específico para aquela fase
     if (room == Green_valley) { global.leveldata.level_1 = _roomStruct; }
@@ -51,7 +63,12 @@ function load_room()
         instance_create_depth(_roomStruct.coindata[i].x, _roomStruct.coindata[i].y, layer, Ocoin);  
     }
 	
+	if (instance_exists(Object_ingame)) {instance_destroy(Object_ingame);}
 	
+	for(var i; i < _roomStruct.itemNum; i++)
+	{
+		instance_create_depth(_roomStruct.itemdata[i].x,_roomStruct.itemdata[i].y, layer, Object_ingame);
+	}
 	
 }
 
