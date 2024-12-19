@@ -1,7 +1,7 @@
 room_goto_next()
 
 global.coin = 0
-
+global.item_inv = array_create(0);
 
 
 global.leveldata =
@@ -17,8 +17,8 @@ global.savedata =
 	save_x : 0,
 	save_y : 0,
 	save_rm : "Green_valley",
-	coins : 0
-	
-
+	coins : 0,
+	item_inv :0,	
+	points : 0,
 }
 
