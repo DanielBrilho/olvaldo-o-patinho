@@ -89,7 +89,7 @@
     {"id":{"name":"Obj_FirebaseREST_Listener_On_Firestore","path":"objects/Obj_FirebaseREST_Listener_On_Firestore/Obj_FirebaseREST_Listener_On_Firestore.yy",},},
     {"id":{"name":"Obj_FirebaseREST_Listener_Once_Firestore","path":"objects/Obj_FirebaseREST_Listener_Once_Firestore/Obj_FirebaseREST_Listener_Once_Firestore.yy",},},
     {"id":{"name":"Obj_item_manager","path":"objects/Obj_item_manager/Obj_item_manager.yy",},},
-    {"id":{"name":"Object_ingame","path":"objects/Object_ingame/Object_ingame.yy",},},
+    {"id":{"name":"Object_ingame_pop","path":"objects/Object_ingame_pop/Object_ingame_pop.yy",},},
     {"id":{"name":"Obush","path":"objects/Obush/Obush.yy",},},
     {"id":{"name":"ObuttonPlay","path":"objects/ObuttonPlay/ObuttonPlay.yy",},},
     {"id":{"name":"ObuttonSair","path":"objects/ObuttonSair/ObuttonSair.yy",},},

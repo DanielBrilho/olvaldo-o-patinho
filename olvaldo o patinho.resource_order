@@ -63,7 +63,7 @@
     {"name":"Obj_FirebaseREST_Listener_On_firestore_document","order":3,"path":"objects/Obj_FirebaseREST_Listener_On_firestore_document/Obj_FirebaseREST_Listener_On_firestore_document.yy",},
     {"name":"Obj_FirebaseREST_Listener_On_Firestore","order":1,"path":"objects/Obj_FirebaseREST_Listener_On_Firestore/Obj_FirebaseREST_Listener_On_Firestore.yy",},
     {"name":"Obj_FirebaseREST_Listener_Once_Firestore","order":4,"path":"objects/Obj_FirebaseREST_Listener_Once_Firestore/Obj_FirebaseREST_Listener_Once_Firestore.yy",},
-    {"name":"Object_ingame","order":2,"path":"objects/Object_ingame/Object_ingame.yy",},
+    {"name":"Object_ingame_pop","order":2,"path":"objects/Object_ingame_pop/Object_ingame_pop.yy",},
     {"name":"Obush","order":1,"path":"objects/Obush/Obush.yy",},
     {"name":"ObuttonSair","order":1,"path":"objects/ObuttonSair/ObuttonSair.yy",},
     {"name":"OCrystal","order":1,"path":"objects/OCrystal/OCrystal.yy",},

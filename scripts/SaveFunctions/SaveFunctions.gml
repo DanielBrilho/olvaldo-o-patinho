@@ -1,7 +1,7 @@
 function save_room() 
 { 
 	
-	var _itemNum = instance_number(Object_ingame);
+	var _itemNum = instance_number(Object_ingame_pop);
     var _coinNum = instance_number(Ocoin); 
 	
     var _roomStruct =  
@@ -30,7 +30,7 @@ function save_room()
 
 	for(var i = 0;i < _itemNum; i++)
 	{
-		var _inst = instance_find(Object_ingame, i);
+		var _inst = instance_find(Object_ingame_pop, i);
 		_roomStruct.itemdata[i] =
 		{
 		    x : _inst.x, 
@@ -39,7 +39,7 @@ function save_room()
 	}
 
     // Guardar os dados da fase específica em um struct global específico para aquela fase
-    if (room == Green_valley) { global.leveldata.level_1 = _roomStruct; }
+    if (room == Green_valley)   { global.leveldata.level_1 = _roomStruct; }
     if (room == Green_valley_2) { global.leveldata.level_2 = _roomStruct; }
     if (room == Green_valley_3) { global.leveldata.level_3 = _roomStruct; }
 }
@@ -63,11 +63,11 @@ function load_room()
         instance_create_depth(_roomStruct.coindata[i].x, _roomStruct.coindata[i].y, layer, Ocoin);  
     }
 	
-	if (instance_exists(Object_ingame)) {instance_destroy(Object_ingame);}
+	if (instance_exists(Object_ingame_pop)) {instance_destroy(Object_ingame_pop);}
 	
-	for(var i; i < _roomStruct.itemNum; i++)
+	for(var i = 0; i < _roomStruct.itemNum; i++)
 	{
-		instance_create_depth(_roomStruct.itemdata[i].x,_roomStruct.itemdata[i].y, layer, Object_ingame);
+		instance_create_depth(_roomStruct.itemdata[i].x,_roomStruct.itemdata[i].y, layer, Object_ingame_pop);
 	}
 	
 }
@@ -89,12 +89,14 @@ function save_game()
 	array_push(_savearray, global.savedata);
 	array_push(_savearray, global.leveldata);
 	
-	var _filename ="savadata.sav"
+	var _filename ="savedata.sav"
 	var _json = json_stringify(_savearray);
 	var _buffer = buffer_create(string_byte_length(_json) + 1, buffer_fixed,1 );
 	buffer_write(_buffer,buffer_string,_json);
 	
 	buffer_save(_buffer, _filename);
+	buffer_delete(_buffer);
+
 	
 }
 
