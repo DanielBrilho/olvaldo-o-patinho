@@ -39,15 +39,8 @@ if keyboard_check(vk_left)
 {
 image_xscale=1
 }
+
 //gravidade e pulo
-
-
-
-
-
-
-
-
 if place_free(x,y+1)
 
 {y += 1
@@ -67,9 +60,16 @@ if keyboard_check(vk_space)
  }
 }
 
+//acesso ao menu
+if keyboard_check(vk_escape)
+{
+room_goto(menu)
+}
 
-
-
-
-
-
+//salvar
+if (keyboard_check_pressed(vk_alt)) {
+    // Cria o objeto no local desejado
+    instance_create_layer(206, 122, "instances", Osalvar);
+	  instance_create_layer(275, 152, "instances", OClosesave);
+	
+}

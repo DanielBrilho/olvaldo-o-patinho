@@ -1,1 +1,1 @@
-item = global.itemlist.lollypop
+item = global.itemlist

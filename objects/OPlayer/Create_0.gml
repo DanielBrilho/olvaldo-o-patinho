@@ -3,10 +3,7 @@
 window_set_size(1280,720);
 
 horizontal_speed = 4
-// Create Event
 
-//gravity = 0.1;   
-//vertical_speed = 0;
 
 pulo = 0
 global.count = 0;
