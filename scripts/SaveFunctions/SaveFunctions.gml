@@ -30,9 +30,15 @@ function save_room() {
     }
 
     // Guardar dados no struct global correspondente à fase
-    if (room == Green_valley)   { global.leveldata.level_1 = _roomStruct; }
-    if (room == Green_valley_2) { global.leveldata.level_2 = _roomStruct; }
-    if (room == Green_valley_3) { global.leveldata.level_3 = _roomStruct; }
+    if (room == Green_valley)        { global.leveldata.level_1 = _roomStruct; }
+    if (room == Green_valley_2)      { global.leveldata.level_2 = _roomStruct; }
+    if (room == Green_valley_3)      { global.leveldata.level_3 = _roomStruct; }
+    if (room == Green_valley_4)      { global.leveldata.level_4 = _roomStruct; }
+    if (room == Green_valley_5)      { global.leveldata.level_5 = _roomStruct; }
+    if (room == Green_valley_6)      { global.leveldata.level_6 = _roomStruct; }
+    if (room == Green_valley_7)      { global.leveldata.level_7 = _roomStruct; }
+    if (room == Green_valley_8)      { global.leveldata.level_8 = _roomStruct; }
+    if (room == Green_valley_9)      { global.leveldata.level_9 = _roomStruct; }
 }
 
 // Função para carregar os dados da fase atual
@@ -40,9 +46,15 @@ function load_room() {
     var _roomStruct = 0;
 
     // Obter os dados da fase correspondente
-    if (room == Green_valley)   { _roomStruct = global.leveldata.level_1; }
-    if (room == Green_valley_2) { _roomStruct = global.leveldata.level_2; }
-    if (room == Green_valley_3) { _roomStruct = global.leveldata.level_3; }
+if (room == Green_valley)        { _roomStruct = global.leveldata.level_1; }
+if (room == Green_valley_2)      { _roomStruct = global.leveldata.level_2; }
+if (room == Green_valley_3)      { _roomStruct = global.leveldata.level_3; }
+if (room == Green_valley_4)      { _roomStruct = global.leveldata.level_4; }
+if (room == Green_valley_5)      { _roomStruct = global.leveldata.level_5; }
+if (room == Green_valley_6)      { _roomStruct = global.leveldata.level_6; }
+if (room == Green_valley_7)      { _roomStruct = global.leveldata.level_7; }
+if (room == Green_valley_8)      { _roomStruct = global.leveldata.level_8; }
+if (room == Green_valley_9)      { _roomStruct = global.leveldata.level_9; }
 
     // Parar se _roomStruct não for uma struct válida
     if (!is_struct(_roomStruct)) { exit; }

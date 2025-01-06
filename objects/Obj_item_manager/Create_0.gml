@@ -10,18 +10,40 @@ function create_item(_name, _description, _sprite, _count) constructor {
 
 // lista items
 global.itemlist = {
+	//lixos____________________________________________________________________
     trash_small: new create_item(
         "lixo",
         "É um saco de lixo, colete ele para limpar o ambiente e receber pontos",
         Ssmall_trash,
         1
     ),
+	//doces____________________________________________________________________
    lollypop: new create_item(
         "Doces:",
         "é um chupa, ele te dá pontos e é bem docinho.",
         Schupa,
         1
-    )
+    ),
+	//ferrugens________________________________________________________________
+	rust: new create_item(
+	"ferrugem",
+	"pedaço de metal enferrujado",
+	Soxyd1,
+	1
+	),
+	rust2: new create_item(
+	"ferrugem",
+	"pedaço de metal enferrujado",
+	Soxyd2,
+	1
+	),
+	rust3: new create_item(
+	"ferrugem",
+	"pedaço de metal enferrujado",
+	Soxyd3,
+	1
+	),
+	//tesouros
 };
 
 // inventario:
@@ -33,6 +55,8 @@ global.inv = array_create(0);
 esp = 50;
 borda = 50;
 sep = 50;
+max_height = 300;
+col_width = 100;
 
 
 
