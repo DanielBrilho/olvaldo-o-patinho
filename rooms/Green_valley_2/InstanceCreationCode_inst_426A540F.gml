@@ -1,1 +1,0 @@
-item = global.itemlist.rust2

@@ -11,6 +11,6 @@ global.point = 0;
 audio_play_sound(SoudQuack,0,false)
 
 
-var lenghtit = array_length(global.inv);
-global.point += lenghtit*50;
+//var lenghtit = array_length(global.inv);
+//global.point += lenghtit*50;
 global.point += global.coin*50;

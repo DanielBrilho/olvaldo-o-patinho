@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"Obanana",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"OPlayer","path":"objects/OPlayer/OPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"Obanana",
   "overriddenProperties":[],
@@ -27,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"Sbanana",
+    "path":"sprites/Sbanana/Sbanana.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

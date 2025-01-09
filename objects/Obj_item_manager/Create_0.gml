@@ -59,8 +59,8 @@ max_height = 300;
 col_width = 100;
 
 
-
-
+global.xpos =0;
+global.ypos =0;
 
 
 

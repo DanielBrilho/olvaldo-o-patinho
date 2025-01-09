@@ -73,3 +73,9 @@ if (keyboard_check_pressed(vk_alt)) {
 	  instance_create_layer(275, 152, "instances", OClosesave);
 	
 }
+
+if instance_exists(Obgtext){
+if keyboard_check(ord("R")){
+	instance_destroy(Obgtext)
+}
+}

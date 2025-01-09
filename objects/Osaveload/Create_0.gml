@@ -20,7 +20,6 @@ global.leveldata =
 
 global.savedata =
 {
-
 	save_x : 0,
 	save_y : 0,
 	save_rm : "Green_valley",

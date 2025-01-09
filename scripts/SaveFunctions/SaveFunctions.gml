@@ -1,6 +1,11 @@
 // Função para salvar os dados da fase atual
 function save_room() { 
     var _itemNum = instance_number(Object_ingame_pop);
+	var _itemNum1 = instance_number(Opop);
+	var _itemNum2 = instance_number(Otrash);
+	var _itemNum3 = instance_number(Orust1);
+	var _itemNum4 = instance_number(Orust2);
+	var _itemNum5 = instance_number(Orust3);
     var _coinNum = instance_number(Ocoin); 
 
     // Criar estrutura para salvar os dados da fase
@@ -8,6 +13,11 @@ function save_room() {
         coinNum : _coinNum, 
         coindata : array_create(_coinNum), 
         itemNum : _itemNum,
+		itemNum1 : _itemNum1,
+		itemNum2 : _itemNum2,
+		itemNum3 : _itemNum3,
+		itemNum4 : _itemNum4,
+		itemNum5 : _itemNum5,
         itemdata : array_create(_itemNum),
     };
 
@@ -29,16 +39,61 @@ function save_room() {
         };
     }
 
+	 // Salvar dados dos itens
+    for (var i = 0; i < _itemNum1; i++) {
+        var _inst = instance_find(Opop, i);
+        _roomStruct.itemdata[i] = {
+            x : _inst.x, 
+            y : _inst.y, 
+        };
+    }
+	
+	 // Salvar dados dos itens
+    for (var i = 0; i < _itemNum2; i++) {
+        var _inst = instance_find(Otrash, i);
+        _roomStruct.itemdata[i] = {
+            x : _inst.x, 
+            y : _inst.y, 
+        };
+    }
+	
+	 // Salvar dados dos itens
+    for (var i = 0; i < _itemNum3; i++) {
+        var _inst = instance_find(Orust1, i);
+        _roomStruct.itemdata[i] = {
+            x : _inst.x, 
+            y : _inst.y, 
+        };
+    }
+
+	 // Salvar dados dos itens
+    for (var i = 0; i < _itemNum3; i++) {
+        var _inst = instance_find(Orust2, i);
+        _roomStruct.itemdata[i] = {
+            x : _inst.x, 
+            y : _inst.y, 
+        };
+    }
+
+// Salvar dados dos itens
+    for (var i = 0; i < _itemNum3; i++) {
+        var _inst = instance_find(Orust3, i);
+        _roomStruct.itemdata[i] = {
+            x : _inst.x, 
+            y : _inst.y, 
+        };
+    }
+
     // Guardar dados no struct global correspondente à fase
     if (room == Green_valley)        { global.leveldata.level_1 = _roomStruct; }
     if (room == Green_valley_2)      { global.leveldata.level_2 = _roomStruct; }
-    if (room == Green_valley_3)      { global.leveldata.level_3 = _roomStruct; }
+    if (room == Green_valley_9)      { global.leveldata.level_3 = _roomStruct; }
     if (room == Green_valley_4)      { global.leveldata.level_4 = _roomStruct; }
     if (room == Green_valley_5)      { global.leveldata.level_5 = _roomStruct; }
     if (room == Green_valley_6)      { global.leveldata.level_6 = _roomStruct; }
     if (room == Green_valley_7)      { global.leveldata.level_7 = _roomStruct; }
     if (room == Green_valley_8)      { global.leveldata.level_8 = _roomStruct; }
-    if (room == Green_valley_9)      { global.leveldata.level_9 = _roomStruct; }
+    if (room == Green_valley_3)      { global.leveldata.level_9 = _roomStruct; }
 }
 
 // Função para carregar os dados da fase atual
@@ -70,6 +125,38 @@ if (room == Green_valley_9)      { _roomStruct = global.leveldata.level_9; }
     for (var i = 0; i < _roomStruct.itemNum; i++) {
         instance_create_depth(_roomStruct.itemdata[i].x, _roomStruct.itemdata[i].y, layer, Object_ingame_pop);
     }
+	
+	// Recriar os itens na fase
+    if (instance_exists(Opop)) { instance_destroy(Opop); }
+    for (var i = 0; i < _roomStruct.itemNum1; i++) {
+        instance_create_depth(_roomStruct.itemdata[i].x, _roomStruct.itemdata[i].y, layer, Opop);
+    }
+	
+	// Recriar os itens na fase
+    if (instance_exists(Otrash)) { instance_destroy(Otrash); }
+    for (var i = 0; i < _roomStruct.itemNum2; i++) {
+        instance_create_depth(_roomStruct.itemdata[i].x, _roomStruct.itemdata[i].y, layer, Otrash);
+    }
+	
+		// Recriar os itens na fase
+    if (instance_exists(Orust1)) { instance_destroy(Orust1); }
+    for (var i = 0; i < _roomStruct.itemNum3; i++) {
+        instance_create_depth(_roomStruct.itemdata[i].x, _roomStruct.itemdata[i].y, layer, Orust1);
+    }
+	
+		// Recriar os itens na fase
+    if (instance_exists(Orust2)) { instance_destroy(Orust2); }
+    for (var i = 0; i < _roomStruct.itemNum4; i++) {
+        instance_create_depth(_roomStruct.itemdata[i].x, _roomStruct.itemdata[i].y, layer, Orust2);
+    }
+	
+		// Recriar os itens na fase
+    if (instance_exists(Orust3)) { instance_destroy(Orust3); }
+    for (var i = 0; i < _roomStruct.itemNum5; i++) {
+        instance_create_depth(_roomStruct.itemdata[i].x, _roomStruct.itemdata[i].y, layer, Orust3);
+    }
+	
+	
 }
 
 // Função para salvar o jogo
@@ -98,6 +185,11 @@ function save_game() {
     buffer_write(_buffer, buffer_string, _json);
     buffer_save(_buffer, _filename);
     buffer_delete(_buffer);
+	global.base = _json
+show_debug_message("Pontos salvos: " + string(global.point));
+show_debug_message("JSON para salvar: " + _json);
+
+	
 }
 
 // Função para carregar o jogo
@@ -132,4 +224,44 @@ function load_game() {
 
     // Carregar os dados da sala
     load_room();
+	show_debug_message("Pontos carregados: " + string(global.savedata.point));
+
+}
+
+
+
+
+function post_database() {
+	
+    // JSON já preparado como string
+  var _json = json_stringify({
+    "fields": {
+        "score": { "integerValue": 100 },
+        "level": { "integerValue": 5 },
+        "player_name": { "stringValue": "John Doe" }
+    }
+});
+    // Configurar URL do Firestore
+    var projeto_id = "dadosdopato"; // Substitua pelo ID do seu projeto Firebase
+    var colecao = "dados"; // Nome da coleção
+    var documento = "pKZRvldJpckyEg1ktS1m"; // Nome único do documento
+    var _url = "https://firestore.googleapis.com/v1/projects/" + projeto_id + "/databases/(default)/documents/" + colecao + "/" + documento;
+	show_debug_message(_url);
+
+    // Configurar cabeçalhos para a requisição
+    var _headers = ds_map_create();
+    _headers[? "Content-Type"] = "application/json"; // Formato do corpo da requisição
+show_debug_message("enviando");
+
+    // Enviar o JSON para o Firestore e armazenar o ID da requisição
+    global.http_request_id = http_request(_url, "PATCH", _headers, _json);
+
+    // Limpar cabeçalhos após o envio
+    ds_map_destroy(_headers);
+
+    show_debug_message("Requisição enviada para Firestore...");
+
+}
+
+function sayhello(){show_debug_message("Sua mensagem aqui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 }
