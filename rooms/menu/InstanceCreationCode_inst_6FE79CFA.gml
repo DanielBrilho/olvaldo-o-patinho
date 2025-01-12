@@ -1,0 +1,2 @@
+instance_destroy(OPlayer)
+audio_stop_sound(Soudcapy)

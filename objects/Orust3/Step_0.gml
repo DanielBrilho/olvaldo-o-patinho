@@ -8,7 +8,7 @@ var hitbox_range = 50;  // Ajuste esse valor conforme necessário
 if (point_distance(x, y, OPlayer.x, OPlayer.y) <= hitbox_range) {
    if(keyboard_check(ord("E"))) {
 	item_add(item);
-	post_database()
+	//post_database()
 	global.coin += 1;
 	global.point += 50;
 	instance_destroy()
