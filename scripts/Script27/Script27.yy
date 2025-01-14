@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Script27",
   "parent":{
-    "name":"item inventory",
-    "path":"folders/item inventory.yy",
+    "name":"Firebase Utils",
+    "path":"folders/Firebase Utils.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
